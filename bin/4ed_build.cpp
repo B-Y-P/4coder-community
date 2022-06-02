@@ -318,6 +318,9 @@ build(Arena *arena, u32 flags, u32 arch, char *code_path, char **code_files, cha
 # error gcc options not set for this platform
 #endif
 
+char *native_includes[] = { "freetype2", 0 };
+char *native_include_dir = "/usr/include";
+
 internal void
 build(Arena *arena, u32 flags, u32 arch, char *code_path, char **code_files, char *out_path, char *out_file, char **defines, char **exports, char **inc_folders){
     Build_Line line;
@@ -343,6 +346,16 @@ build(Arena *arena, u32 flags, u32 arch, char *code_path, char **code_files, cha
     if (inc_folders != 0){
         for (u32 i = 0; inc_folders[i] != 0; ++i){
             char *str = fm_str(arena, code_path, "/", inc_folders[i]);
+            fm_add_to_line(line, "-I%s", str);
+        }
+    }
+    
+    if (native_includes != 0){
+        for (u32 i = 0; native_includes[i] != 0; ++i){
+            char *str = fm_str(arena,
+                               native_include_dir,
+                               "/",
+                               native_includes[i]);
             fm_add_to_line(line, "-I%s", str);
         }
     }
@@ -569,6 +582,12 @@ build_main(Arena *arena, char *cdir, b32 update_local_theme, u32 flags, u32 arch
         fm_clear_folder(themes_folder);
         fm_make_folder_if_missing(arena, themes_folder);
         fm_copy_all(source_themes_folder, themes_folder);
+
+        char *fonts_folder = fm_str(arena, "../build/fonts");
+        char *source_fonts_folder = fm_str(arena, "../4coder-non-source/dist_files/fonts");
+        fm_clear_folder(fonts_folder);
+        fm_make_folder_if_missing(arena, fonts_folder);
+        fm_copy_all(source_fonts_folder, fonts_folder);
     }
     
     fflush(stdout);

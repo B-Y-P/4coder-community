@@ -47,17 +47,32 @@ SOFTWARE.
 
 # Build Instructions
 
-1. Create an empty folder named "4ed" to contain the codebase.
-2. Clone the repository
-3. Rename the folder containing the repository to "code"
-4. At the same level as the "4ed" folder, clone the "4coder-non-source" repository
-5. A. On windows setup the visual studio command line magic sauce so that "cl" works
-   B. On linux setup g++
-   C. On mac setup clang
-6. Navigate to the "4ed/code" folder.
-7. A. On windows run "bin\build.bat"
-   B. On linux run "bin\build-linux.sh"
-   C. On linux run "bin\build-mac.sh"
+## Download required repositories
+
+1. Create an empty folder for the source.
+2. Clone this repository there to a folder named "code".
+   - `git clone <url> code`
+3. At the same level as the "code" folder, clone the "4coder-non-source" repository.
+
+Result should be like this:
+
+```
+root_dir
+  - code   <this repo>
+  - 4coder-non-source
+```
+
+## Compile
+
+1. Setup compiler.
+   - On windows setup the visual studio command line magic sauce so that "cl" works
+   - On linux setup g++
+   - On mac setup clang
+6. Navigate to the "code" folder.
+7. Run build script.
+   - On windows run `bin\build.bat`
+   - On linux run `./bin/build-linux.sh`
+   - On mac run `./bin/build-mac.sh`
 
 
 # Notes on Major Issues
