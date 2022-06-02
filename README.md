@@ -57,9 +57,9 @@ SOFTWARE.
    - On mac setup clang
 6. Navigate to the "4ed/code" folder.
 7. 
-   - On windows run "bin\build.bat"
-   - On linux run "bin\build-linux.sh"
-   - On linux run "bin\build-mac.sh"
+   - On windows run `bin\build.bat`
+   - On linux run `./bin/build-linux.sh`
+   - On linux run `./bin/build-mac.sh`
 
 
 # Notes on Major Issues
