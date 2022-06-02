@@ -51,7 +51,7 @@ SOFTWARE.
 
 1. Create an empty folder for the source.
 2. Clone this repository there to a folder named "code".
-   - `git clone -o code <url>`
+   - `git clone <url> code`
 3. At the same level as the "code" folder, clone the "4coder-non-source" repository.
 
 Result should be like this:
