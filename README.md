@@ -72,7 +72,7 @@ root_dir
 7. Run build script.
    - On windows run `bin\build.bat`
    - On linux run `./bin/build-linux.sh`
-   - On linux run `./bin/build-mac.sh`
+   - On mac run `./bin/build-mac.sh`
 
 
 # Notes on Major Issues
