@@ -51,13 +51,15 @@ SOFTWARE.
 2. Clone the repository
 3. Rename the folder containing the repository to "code"
 4. At the same level as the "4ed" folder, clone the "4coder-non-source" repository
-5. A. On windows setup the visual studio command line magic sauce so that "cl" works
-   B. On linux setup g++
-   C. On mac setup clang
+5. 
+   - On windows setup the visual studio command line magic sauce so that "cl" works
+   - On linux setup g++
+   - On mac setup clang
 6. Navigate to the "4ed/code" folder.
-7. A. On windows run "bin\build.bat"
-   B. On linux run "bin\build-linux.sh"
-   C. On linux run "bin\build-mac.sh"
+7. 
+   - On windows run "bin\build.bat"
+   - On linux run "bin\build-linux.sh"
+   - On linux run "bin\build-mac.sh"
 
 
 # Notes on Major Issues
