@@ -582,6 +582,12 @@ build_main(Arena *arena, char *cdir, b32 update_local_theme, u32 flags, u32 arch
         fm_clear_folder(themes_folder);
         fm_make_folder_if_missing(arena, themes_folder);
         fm_copy_all(source_themes_folder, themes_folder);
+
+        char *fonts_folder = fm_str(arena, "../build/fonts");
+        char *source_fonts_folder = fm_str(arena, "../4coder-non-source/dist_files/fonts");
+        fm_clear_folder(fonts_folder);
+        fm_make_folder_if_missing(arena, fonts_folder);
+        fm_copy_all(source_fonts_folder, fonts_folder);
     }
     
     fflush(stdout);
